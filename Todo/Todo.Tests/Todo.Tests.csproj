@@ -161,13 +161,9 @@
     <Reference Include="System.Net.Http.WebRequest" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InMemoryAccessTokenStore.cs" />
     <Compile Include="MockablDbSetWithIQueryable.cs" />
     <Compile Include="MockTodoRepository.cs" />
-    <Compile Include="NullAccessTokenProvider.cs" />
     <Compile Include="RequestContextHandler.cs" />
-    <Compile Include="TodoClientTest.cs" />
-    <Compile Include="AccountClientTest.cs" />
     <Compile Include="Helpers\NonDisposableRequest.cs" />
     <Compile Include="Helpers\NonDisposableRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,21 +179,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Account.Client\Account.Client.csproj">
-      <Project>{19b3fa1f-2846-4c2c-ae09-ee032b0edefe}</Project>
-      <Name>Account.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Todo.Client\Todo.Client.csproj">
-      <Project>{8a2a3766-75af-41dd-b4d4-cda5e6e2862e}</Project>
-      <Name>Todo.Client</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Todo.Web\Todo.Web.csproj">
       <Project>{B996D68A-885D-4F2F-9137-BCBF089238FE}</Project>
       <Name>Todo.Web</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebApi.Client\WebApi.Client.csproj">
-      <Project>{b9bb628d-edb7-450d-97cf-14219cba61ec}</Project>
-      <Name>WebApi.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
