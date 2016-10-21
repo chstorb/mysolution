@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 
 namespace Todo.Web.Models
 {
@@ -10,9 +11,14 @@ namespace Todo.Web.Models
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
+        
         public TodosDbContext() : base("name=TodosDbContext")
         {
+            var connectionString = Environment.GetEnvironmentVariable("TodosDbContext");
+            if (!string.IsNullOrEmpty(connectionString))
+            {
+                Database.Connection.ConnectionString = connectionString;
+            }
         }
 
         public virtual DbSet<TodoItem> TodoItems { get; set; }
