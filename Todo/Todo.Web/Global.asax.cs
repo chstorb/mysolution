@@ -6,6 +6,9 @@ using System.Web.Routing;
 
 namespace Todo.Web
 {
+    /// <summary>
+    /// MvcApplication class
+    /// </summary>
     public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
