@@ -80,7 +80,9 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\templateLoader.js" />
     <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
+    <Content Include="Views\_reports.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
