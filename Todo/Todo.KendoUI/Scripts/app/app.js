@@ -27,7 +27,8 @@ var indexView = new kendo.View("index", { model: viewModel, init: viewModel.init
 
 var detailView = new kendo.View("<span>Detail - press your browser back button to navigate back.</span>");
 
-var reportsView = new kendo.View("<span>Reports</span>");
+//var reportsView = new kendo.View("<span>Reports</span>");
+var reportsView = null;
 
 var analyticsView = new kendo.View("<span>Analytics</span>");
 
@@ -60,7 +61,23 @@ router.route("/export", function () {
     layout.showIn("#content", exportView);
 });
 
-$(function() {
+templateLoader.loadExtTemplate("Views/_reports.html");
+
+//Subscribe to the event triggered when the templates are loaded
+//Do not load use templates before they are available
+$(document).bind("TEMPLATE_LOADED", function (e, path) {
+    var templateContent = $("#reportsViewTemplate").html()
+
+    //Compile and cache templates
+    _itemTemplate = kendo.template(templateContent, { useWithBlock: false });
+
+    //Use the template (assuming "data" is collection loaded elsewhere)
+    var data = { dummy: "" };
+    var result = _itemTemplate(data);
+    reportsView = new kendo.View(result);
+});
+
+$(function () {    
     router.start();
 });
 
