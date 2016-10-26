@@ -21,7 +21,7 @@ var viewModel = kendo.observable({
 });
 
 // views, layouts
-var layout = new kendo.Layout("<header>Header</header><section id='content'></section><footer>Footer</footer>");
+var layout = new kendo.Layout("<section id='content'></section>");
 
 var indexView = new kendo.View("index", { model: viewModel, init: viewModel.init.bind(viewModel), show: viewModel.show.bind(viewModel) });
 
@@ -61,7 +61,7 @@ router.route("/export", function () {
     layout.showIn("#content", exportView);
 });
 
-templateLoader.loadExtTemplate("Views/_reports.html");
+templateLoader.loadExtTemplate("Views/Reports/_Reports.html");
 
 //Subscribe to the event triggered when the templates are loaded
 //Do not load use templates before they are available
