@@ -4,7 +4,7 @@ var templateLoader = (function ($, host) {
     return {
         //Method: loadExtTemplate
         //Params: (string) path: the relative path to a file that contains template definition(s)
-        loadExtTemplate: function (path) {
+        loadExtTemplate: function (id, path) {
             //Use jQuery Ajax to fetch the template file
             var tmplLoader = $.get(path)
                 .done(function (result) {
@@ -17,7 +17,7 @@ var templateLoader = (function ($, host) {
 
             tmplLoader.always(function () {
                 //Publish an event that indicates when a template is done loading
-                $(host).trigger("TEMPLATE_LOADED", [path]);
+                $(host).trigger("TEMPLATE_LOADED", [id]);
             });             
         }
     };

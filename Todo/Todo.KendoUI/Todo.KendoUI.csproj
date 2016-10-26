@@ -83,8 +83,8 @@
     <Content Include="Scripts\app\templateLoader.js" />
     <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
     <Content Include="Views\Analytics\_Analytics.html" />
+    <Content Include="Views\Dashboard\_Dashboard.html" />
     <Content Include="Views\Export\_Export.html" />
-    <Content Include="Views\Overview\_Overview.html" />
     <Content Include="Views\Reports\_Reports.html" />
     <Content Include="Web.config" />
   </ItemGroup>
