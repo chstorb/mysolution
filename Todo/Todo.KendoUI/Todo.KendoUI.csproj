@@ -70,6 +70,18 @@
     <Content Include="Content\ie10-viewport-bug-workaround.css" />
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\app\utils.js" />
+    <Content Include="Scripts\app\viewModels\Dashboard\indexViewModel.js" />
+    <Content Include="Scripts\app\viewModels\Export\indexViewModel.js" />
+    <Content Include="Scripts\app\viewModels\Reports\indexViewModel.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -80,12 +92,17 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\main.js" />
     <Content Include="Scripts\app\templateLoader.js" />
+    <Content Include="Scripts\app\viewModels\Analytics\indexViewModel.js" />
     <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
-    <Content Include="Views\Analytics\_Analytics.html" />
-    <Content Include="Views\Dashboard\_Dashboard.html" />
-    <Content Include="Views\Export\_Export.html" />
-    <Content Include="Views\Reports\_Reports.html" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\text.js" />
+    <Content Include="Views\Analytics\Analytics.html" />
+    <Content Include="Views\Dashboard\Dashboard.html" />
+    <Content Include="Views\Export\Export.html" />
+    <Content Include="Views\Reports\Reports.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
