@@ -1,10 +1,7 @@
 ﻿define([
-    "utils",
-    "router"
+    'utils',
+    'router'
 ], function (utils, router) {
-
-    "use strict";
-
     $(function () {
         router.start();
     });

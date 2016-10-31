@@ -63,6 +63,14 @@
             });
         });
 
+        router.route("/products", function () {
+            require(['products-indexViewModel', 'text!/Views/Products/Products.html'], function (viewModel, view) {
+                loadView(viewModel, view, function () {
+                    kendo.bind($("#example"), viewModel);
+                });
+            });
+        });
+
         router.route("/analytics", function () {
             require(["analytics-indexViewModel", "text!/Views/Analytics/Analytics.html"], function (viewModel, view) {
                 loadView(viewModel, view, function () { });
@@ -70,25 +78,36 @@
         });
 
         var loadView = function (viewModel, view, delegate) {
-            viewModel.router = router;
-            var kendoView = new kendo.View(view, { model: viewModel, init: viewModel.init.bind(viewModel), show: viewModel.show.bind(viewModel) });
-            kendo.fx($("#content")).fadeOut().duration(300).play().then(function () {
-                layout.showIn("#content", kendoView);
-                
-                if (delegate != undefined)
-                    delegate();
+            try {
+                var kendoView = null;
+                if (viewModel) {
+                    viewModel.router = router;
+                    kendoView = new kendo.View(view, { model: viewModel, init: viewModel.init.bind(viewModel), show: viewModel.show.bind(viewModel) });
+                }
+                else {
+                    kendoView = new kendo.View(view);
+                }
+                kendo.fx($("#content")).fadeOut().duration(300).play().then(function () {
+                    layout.showIn("#content", kendoView);
 
-                kendo.fx($("#content")).fadeIn().play();
-            });
+                    if (delegate != undefined)
+                        delegate();
 
-            //kendo.fx($("#content")).slideIn("down").reverse().then(function () {            
-            //    layout.showIn("#content", kendoView);
-            //
-            //    if (delegate != undefined)
-            //        delegate();
-            //
-            //    kendo.fx($("#content")).slideIn("down").play();
-            //});
+                    kendo.fx($("#content")).fadeIn().play();
+                });
+
+                //kendo.fx($("#content")).slideIn("down").reverse().then(function () {            
+                //    layout.showIn("#content", kendoView);
+                //
+                //    if (delegate != undefined)
+                //        delegate();
+                //
+                //    kendo.fx($("#content")).slideIn("down").play();
+                //});
+            }
+            catch (ex) {
+                alert("error: " + ex.message);
+            }
         };
 
         return router;

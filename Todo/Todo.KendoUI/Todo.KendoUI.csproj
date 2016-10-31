@@ -71,10 +71,13 @@
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\app\datasources\productDatasource.js" />
+    <Content Include="Scripts\app\models\productModel.js" />
     <Content Include="Scripts\app\router.js" />
     <Content Include="Scripts\app\utils.js" />
     <Content Include="Scripts\app\viewModels\Dashboard\indexViewModel.js" />
     <Content Include="Scripts\app\viewModels\Export\indexViewModel.js" />
+    <Content Include="Scripts\app\viewModels\Products\indexViewModel.js" />
     <Content Include="Scripts\app\viewModels\Reports\indexViewModel.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -102,6 +105,7 @@
     <Content Include="Views\Analytics\Analytics.html" />
     <Content Include="Views\Dashboard\Dashboard.html" />
     <Content Include="Views\Export\Export.html" />
+    <Content Include="Views\Products\Products.html" />
     <Content Include="Views\Reports\Reports.html" />
     <Content Include="Web.config" />
   </ItemGroup>

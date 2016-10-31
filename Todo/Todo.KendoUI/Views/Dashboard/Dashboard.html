@@ -28,7 +28,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>\\#</th>
+                <th>#</th>
                 <th>Header</th>
                 <th>Header</th>
                 <th>Header</th>
@@ -151,3 +151,60 @@
         </tbody>
     </table>
 </div>
+
+<div class="table-responsive">
+    <ul id="listview"></ul>
+    <div id="pager"></div>
+</div>
+<script>
+    $(function () {
+        var dataSource = new kendo.data.DataSource({
+            data: [
+                { id: 1, item: "Item 1" },
+                { id: 2, item: "Item 2" },
+                { id: 3, item: "Item 3" },
+                { id: 4, item: "Item 4" },
+                { id: 5, item: "Item 5" },
+                { id: 6, item: "Item 6" }
+            ],
+            pageSize: 2
+        });
+
+        $("#listview").kendoListView({
+            dataSource: dataSource,
+            template: "<li>#: item #</li>",
+            editTemplate: '<li><input type="text" data-bind="value:item" name="FirstName" required="required"/></li>',
+            selectable: true,
+            navigatable: true,
+            editable: true
+        });
+
+        $("#pager").kendoPager({
+            dataSource: dataSource
+        });
+    });
+</script>
+<ul id="listView"></ul>
+<script>
+    $(document).ready(function () {
+        $("#listView").kendoListView({
+            //template: "<li>${FirstName} ${LastName}</li>",
+            selectable: true,
+            navigatable: true,
+            editable: true,
+            template: "<li>${FirstName}</li>",
+            editTemplate: '<li><input type="text" data-bind="value:FirstName" name="FirstName" required="required"/></li>',
+            dataSource: {
+                data: [
+                    {
+                        FirstName: "Joe",
+                        LastName: "Smith"
+                    },
+                    {
+                        FirstName: "Jane",
+                        LastName: "Smith"
+                    }]
+            }
+        });
+    });
+</script>
